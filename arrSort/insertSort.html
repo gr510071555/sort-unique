@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [113,252,10,5,580,113,252,10,330]
+        function insertSort(arr){
+            //遍历数组
+            for(let i = 1; i < arr.length; i++){
+                //声明一个变量用来记录开始比较的位置，并将i位置的值保存在变量t中
+                let t = arr[i]
+                //声明一个变量用来记录i前一个位置保存在变量p中
+                let p = i - 1
+                //如果p不为负数且t的值小于p位置的值就无限循环
+                while(p >= 0 && t < arr[p]){
+                    //让p位置的值和p+1位置的值交换位置
+                    arr[p+1] = arr[p]
+                    //然后让p自减
+                    p--
+                }
+                //当退出循环的时候讲t的值保存在p+1的位置
+                arr[p+1] = t
+                }
+            }
+            insertSort(arr)
+            console.log(arr)
+    </script>
+</body>
+</html>
